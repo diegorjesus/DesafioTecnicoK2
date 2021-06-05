@@ -1,23 +1,22 @@
 ﻿using Api2.Aplicacao.Interfaces;
 using Api2.Controllers;
-using Api2.TestesUnitarios.Fixtures;
 using Microsoft.AspNetCore.Mvc;
+using Moq.AutoMock;
 using System;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace Api2.TestesUnitarios
 {
-    [Collection(nameof(CalculaJurosControllerCollection))]
     public class CalculaJurosControllerTestes
     {
-        private readonly CalculaJurosControllerFixture _fixture;
+        private readonly AutoMocker _autoMocker;
         private readonly CalculaJurosController _controller;
 
-        public CalculaJurosControllerTestes(CalculaJurosControllerFixture fixture)
+        public CalculaJurosControllerTestes()
         {
-            _fixture = fixture;
-            _controller = fixture.InstanciarController();
+            _autoMocker = new AutoMocker();
+            _controller = _autoMocker.CreateInstance<CalculaJurosController>();
         }
 
         [Fact(DisplayName = "Calcula os Juros e retorna sucesso")]
@@ -30,7 +29,7 @@ namespace Api2.TestesUnitarios
                 Tempo = 5
             };
 
-            _fixture.Mocker.GetMock<ICalculaJurosServico>()
+            _autoMocker.GetMock<ICalculaJurosServico>()
                 .Setup(x => x.CalcularJurosAsync(parametros))
                 .Returns(Task.FromResult(105.10));
 
@@ -52,7 +51,7 @@ namespace Api2.TestesUnitarios
                 Tempo = 5
             };
 
-            _fixture.Mocker.GetMock<ICalculaJurosServico>()
+            _autoMocker.GetMock<ICalculaJurosServico>()
                 .Setup(x => x.CalcularJurosAsync(parametros))
                 .Returns(Task.FromException<double>(new Exception()));
 
