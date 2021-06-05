@@ -3,8 +3,6 @@ using Api2.Controllers;
 using Api2.TestesUnitarios.Fixtures;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
