@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  api1:
+    image: api1
+    build:
+      context: ./Api1
+    expose: 
+      - "8080"
+    ports:
+      - "8080:80"
+    networks:
+      - desafiok2network
+   
+  api2:
+    image: api2
+    build:
+      context: ./Api2
+    ports:
+      - "8082:80"
+    networks:
+      - desafiok2network
+    depends_on:
+      - "api1" 
+      
+networks: 
+    desafiok2network:        
+        driver: bridge
+     
+
