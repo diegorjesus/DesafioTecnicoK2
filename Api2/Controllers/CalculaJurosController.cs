@@ -1,4 +1,4 @@
-﻿using Api2.Application.Interfaces;
+﻿using Api2.Aplicacao.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -10,10 +10,10 @@ namespace Api2.Controllers
     [ApiController]
     public class CalculaJurosController : ControllerBase
     {
-        private readonly ICalcularJurosAsyncAppService service;
+        private readonly ICalcularJurosAsyncApServico service;
         private readonly ILogger<CalculaJurosController> _logger;
 
-        public CalculaJurosController(ICalcularJurosAsyncAppService service, ILogger<CalculaJurosController> logger)
+        public CalculaJurosController(ICalcularJurosAsyncApServico service, ILogger<CalculaJurosController> logger)
         {
             this.service = service;
             _logger = logger;
