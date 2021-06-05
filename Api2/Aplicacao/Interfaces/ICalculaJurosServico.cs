@@ -2,7 +2,7 @@
 
 namespace Api2.Aplicacao.Interfaces
 {
-    public interface ICalcularJurosAsyncApServico
+    public interface ICalculaJurosServico
     {
         Task<double> CalcularJurosAsync(ParametrosConsulta parametros);
     }

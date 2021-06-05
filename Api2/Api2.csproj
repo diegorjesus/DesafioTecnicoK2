@@ -7,13 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.13" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.1.4" />
+    <Compile Remove="Aplicacao\Servicos\**" />
+    <Content Remove="Aplicacao\Servicos\**" />
+    <EmbeddedResource Remove="Aplicacao\Servicos\**" />
+    <None Remove="Aplicacao\Servicos\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Aplicacao\Servicos\" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.13" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.1.4" />
   </ItemGroup>
 
 

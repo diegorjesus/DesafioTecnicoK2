@@ -30,7 +30,7 @@ namespace Api2.TestesUnitarios
                 Tempo = 5
             };
 
-            _fixture.Mocker.GetMock<ICalcularJurosAsyncApServico>()
+            _fixture.Mocker.GetMock<ICalculaJurosServico>()
                 .Setup(x => x.CalcularJurosAsync(parametros))
                 .Returns(Task.FromResult(105.10));
 
@@ -52,7 +52,7 @@ namespace Api2.TestesUnitarios
                 Tempo = 5
             };
 
-            _fixture.Mocker.GetMock<ICalcularJurosAsyncApServico>()
+            _fixture.Mocker.GetMock<ICalculaJurosServico>()
                 .Setup(x => x.CalcularJurosAsync(parametros))
                 .Returns(Task.FromException<double>(new Exception()));
 

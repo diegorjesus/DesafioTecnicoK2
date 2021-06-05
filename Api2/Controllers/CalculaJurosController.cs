@@ -10,10 +10,10 @@ namespace Api2.Controllers
     [ApiController]
     public class CalculaJurosController : ControllerBase
     {
-        private readonly ICalcularJurosAsyncApServico service;
+        private readonly ICalculaJurosServico service;
         private readonly ILogger<CalculaJurosController> _logger;
 
-        public CalculaJurosController(ICalcularJurosAsyncApServico service, ILogger<CalculaJurosController> logger)
+        public CalculaJurosController(ICalculaJurosServico service, ILogger<CalculaJurosController> logger)
         {
             this.service = service;
             _logger = logger;
