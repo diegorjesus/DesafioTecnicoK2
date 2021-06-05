@@ -8,12 +8,7 @@ namespace Api2.Controllers
     [ApiController]
     public class ShowMeTheCodeController : ControllerBase
     {
-        private readonly string _gitUrl;
-
-        public ShowMeTheCodeController(IConfiguration config)
-        {
-            _gitUrl = config.GetSection("Urls").GetValue<string>("GitUrl");
-        }
+        private const string _gitUrl = "https://github.com/diegorjesus/DesafioTecnicoK2.git";
 
         [HttpGet]
         [SwaggerResponse(200, "Retorna Url do gitHub onde o fonte se encontra")]
